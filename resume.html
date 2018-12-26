@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>个人简历</title>
+  <link rel="stylesheet" href="css/resume.css">
+</head>
+
+<body>
+  <form name="form2" action="resume.php"  method="POST">
+          <h1 id="intro">请输入您的个人信息</h1>
+          <p>真实姓名：<input type="text" name="xm" size=15 value="<?php  echo $row['name']?>"></p>
+          <p>学历
+              <select name="scholar">
+                <option value="">中专</option>
+                <option value="">大专</option>
+                <option value="" selected>本科</option>
+                <option value="">硕士</option>
+                <option value="">博士</option>
+              </select>
+            </p>
+          <p> 性别:
+            <input type=radio name="gender" value="男" checked> 男
+            <input type=radio name="gender" value="女"> 女 &nbsp;
+            <input type=radio name="gender" value="保密">保密
+          <p> 出生日期:
+            <input type=text name="year" size=2 value="<?php  echo $row['year']?>"> 年
+            <input type=text name="month" size=2 value="<?php echo $row['month']?>"> 月
+            <input type=text name="day" size=2 value="<?php echo $row['day']?>"> 日
+          </p>
+          <p>兴趣爱好
+            <input type=checkbox name="hobby" value="文学"> 文学
+            <input type=checkbox name="hobby" value="体育"> 体育
+            <input type=checkbox name="hobby" value="艺术"> 绘画
+            <input type=checkbox name="hobby" value="美食"> 音乐
+            <input type=checkbox name="hobby" value="旅游"> 旅游
+            <input type=checkbox name="hobby" value="其他"> 其他
+          </p>
+          <p>个人介绍
+              <textarea name=comment rows=5 cols=60></textarea>
+          </p>
+          <input name="submit" type=submit value="提交" id="submit">
+          <input name="reset" type=reset value="重填">
+  </form>
+  <script>
+    var submit = document.getElementById("submit");
+    submit.onclick = function(){
+      alert("简历生成成功！");
+    }
+  </script>
+</body>
+
+</html>
